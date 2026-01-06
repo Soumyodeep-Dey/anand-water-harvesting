@@ -5,6 +5,7 @@ import { Menu, X, Phone, Mail } from "lucide-react"
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [showCallPopup, setShowCallPopup] = useState(false)
 
   return (
     <>
@@ -47,12 +48,12 @@ export function Header() {
               <a href="#contact" className="text-gray-700 hover:text-blue-600 font-medium">
                 Contact
               </a>
-              <a
-                href="tel:+918809659955"
+              <button
+                onClick={() => setShowCallPopup(true)}
                 className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
               >
                 Call Now
-              </a>
+              </button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -76,16 +77,44 @@ export function Header() {
               <a href="#contact" onClick={() => setMobileOpen(false)} className="block text-gray-700 hover:text-blue-600 py-2">
                 Contact
               </a>
-              <a
-                href="tel:+918809659955"
-                className="block bg-blue-600 text-white px-6 py-2 rounded-lg text-center hover:bg-blue-700 transition"
+              <button
+                onClick={() => {
+                  setMobileOpen(false)
+                  setShowCallPopup(true)
+                }}
+                className="block w-full bg-blue-600 text-white px-6 py-2 rounded-lg text-center hover:bg-blue-700 transition"
               >
                 Call Now
-              </a>
+              </button>
             </div>
           )}
         </div>
       </nav>
+
+      {/* Call Now Popup */}
+      {showCallPopup && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50" onClick={() => setShowCallPopup(false)}>
+          <div className="bg-white rounded-xl p-8 max-w-sm mx-4 text-center shadow-2xl" onClick={(e) => e.stopPropagation()}>
+            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Phone className="w-8 h-8 text-blue-600" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Call Us Now</h3>
+            <p className="text-gray-600 mb-4">Reach out to us for any inquiries</p>
+            <a
+              href="tel:+918809659955"
+              className="text-2xl font-bold text-blue-600 hover:text-blue-700 block mb-6"
+            >
+              +91 88096 59955
+            </a>
+            <button
+              onClick={() => setShowCallPopup(false)}
+              className="bg-gray-100 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-200 transition"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </>
   )
 }
