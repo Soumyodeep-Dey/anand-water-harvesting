@@ -32,7 +32,7 @@ export function Header() {
       <nav className="bg-white shadow-md sticky top-0 z-40">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <div className="text-2xl font-bold text-blue-900">AWH</div>
+            <a href="/" className="text-2xl font-bold text-blue-900 hover:text-blue-700 transition">Anand Water Harvesting</a>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex gap-8 items-center">
