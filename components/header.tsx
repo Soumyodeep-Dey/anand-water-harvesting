@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { Menu, X, Phone, Mail } from "lucide-react"
-import Link from "next/link"
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -36,18 +35,18 @@ export function Header() {
 
             {/* Desktop Menu */}
             <div className="hidden md:flex gap-8 items-center">
-              <Link href="#" className="text-gray-700 hover:text-blue-600 font-medium">
+              <a href="#about" className="text-gray-700 hover:text-blue-600 font-medium">
                 About Us
-              </Link>
-              <Link href="#" className="text-gray-700 hover:text-blue-600 font-medium">
+              </a>
+              <a href="#services" className="text-gray-700 hover:text-blue-600 font-medium">
                 Services
-              </Link>
-              <Link href="#" className="text-gray-700 hover:text-blue-600 font-medium">
+              </a>
+              <a href="#faq" className="text-gray-700 hover:text-blue-600 font-medium">
                 FAQ
-              </Link>
-              <Link href="#" className="text-gray-700 hover:text-blue-600 font-medium">
+              </a>
+              <a href="#contact" className="text-gray-700 hover:text-blue-600 font-medium">
                 Contact
-              </Link>
+              </a>
               <a
                 href="tel:+918809659955"
                 className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
@@ -65,18 +64,18 @@ export function Header() {
           {/* Mobile Menu */}
           {mobileOpen && (
             <div className="md:hidden mt-4 pt-4 border-t space-y-2">
-              <Link href="#" className="block text-gray-700 hover:text-blue-600 py-2">
+              <a href="#about" onClick={() => setMobileOpen(false)} className="block text-gray-700 hover:text-blue-600 py-2">
                 About Us
-              </Link>
-              <Link href="#" className="block text-gray-700 hover:text-blue-600 py-2">
+              </a>
+              <a href="#services" onClick={() => setMobileOpen(false)} className="block text-gray-700 hover:text-blue-600 py-2">
                 Services
-              </Link>
-              <Link href="#" className="block text-gray-700 hover:text-blue-600 py-2">
+              </a>
+              <a href="#faq" onClick={() => setMobileOpen(false)} className="block text-gray-700 hover:text-blue-600 py-2">
                 FAQ
-              </Link>
-              <Link href="#" className="block text-gray-700 hover:text-blue-600 py-2">
+              </a>
+              <a href="#contact" onClick={() => setMobileOpen(false)} className="block text-gray-700 hover:text-blue-600 py-2">
                 Contact
-              </Link>
+              </a>
               <a
                 href="tel:+918809659955"
                 className="block bg-blue-600 text-white px-6 py-2 rounded-lg text-center hover:bg-blue-700 transition"

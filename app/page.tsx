@@ -5,6 +5,7 @@ import { Services } from "@/components/services"
 import { Projects } from "@/components/projects"
 import { Testimonials } from "@/components/testimonials"
 import { Clients } from "@/components/clients"
+import { FAQ } from "@/components/faq"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 
@@ -18,6 +19,7 @@ export default function Home() {
       <Projects />
       <Testimonials />
       <Clients />
+      <FAQ />
       <ContactSection />
       <Footer />
     </main>
